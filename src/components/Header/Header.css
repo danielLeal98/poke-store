@@ -1,0 +1,39 @@
+.Logo {
+  width: 150px;
+  margin: 10px;  
+}
+
+.divSearch {
+  display: flex;
+  background-color: transparent;
+  width: 100%;
+  margin: 10px;  
+}
+
+@media (min-width: 800px) {
+  .divSearch {
+    padding-left: 10%; 
+    
+  }
+}
+.inputSearch{
+  font-size: 20px;
+  width: 50%;
+}
+@media (max-width: 800px) {
+  .Logo {
+    width: 90px;
+  }
+  .inputSearch{
+    font-size: 20px;
+    width: 100%;
+ 
+  }
+  .divSearch {
+    display: flex;     
+  }
+  button{
+    width: 50px;
+    
+  }
+}

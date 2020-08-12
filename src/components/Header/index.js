@@ -1,22 +1,52 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './styles.css';
-//import ButtonLink from "./ButtonLink";
-import Button from '../Button';
-import { HeaderContainer } from './styles';
+import Logo from '../../assets/logo.png';
+import './Header.css';
+import { DivHeader, ButtonSearch } from './styles';
+import api from '../../repositories/api';
+import { FiSearch } from 'react-icons/fi';
 
-function Header({ textButton, to }) {
+function Header({ bgColor, typePokemon, pokemons, setCatalogItens }) {
+  function handleSearch(e) {
+    const term = e.target.value;
+    if (term) {
+      const filteredItens = pokemons.filter((item) =>
+        item.name.toLowerCase().includes(term.toLowerCase())
+      );
+      setCatalogItens(filteredItens);
+    } else {
+      setCatalogItens(pokemons);
+    }
+  }
   return (
-    <HeaderContainer
-      bgcolor={window.location.pathname === '/grass' ? '#78C850' : '#EA477f'}
-    >
+    <DivHeader bgColor={bgColor}>
       <Link to="/">
-        <img className="Logo" src={Logo} alt="DMFLIX" />
+        <img
+          className="Logo"
+          src={Logo}
+          alt="PokeStore"
+          onClick={api.clearCache}
+        />
       </Link>
-      <Button as={Link} className="ButtonLink" to={to}>
-        {textButton}
-      </Button>
-    </HeaderContainer>
+      <div className="divLogo">
+        <img
+          className="Logo"
+          src={require(`../../assets/` + typePokemon + `.png`)}
+          alt={typePokemon}
+        />
+      </div>
+      <div className="divSearch">
+        <input
+          type="text"
+          className="inputSearch"
+          placeholder="Busque aqui seu produto"
+          onChange={handleSearch}
+        />
+        <ButtonSearch bgColor={bgColor} disabled>
+          <FiSearch size={25} />
+        </ButtonSearch>
+      </div>
+    </DivHeader>
   );
 }
 
