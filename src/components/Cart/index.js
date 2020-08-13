@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(4, 0, 2),
   },
   list: {
-    width: 430,
+    width: 300,
     paddingTop: 30,
     paddingBottom: 112,
   },
@@ -53,6 +53,7 @@ export default function TemporaryDrawer({
   cartItens,
   setCartItens,
 }) {
+  const cor = bgColorButton;
   const classes = useStyles();
   const [state, setState] = React.useState({
     top: false,
@@ -222,12 +223,12 @@ export default function TemporaryDrawer({
 
       <DivTitleCartBottom>
         <DivTitleCartTop bgColorButton={bgColorButton}>
-          <TitleCart>
+          <TitleCart bgColorButton={'var(--primary)'}>
             Resumo do Carrinho: {totalItens ? totalItens : 0}
           </TitleCart>
           <Divider />
         </DivTitleCartTop>
-        <DivTotal bgColorButton={bgColorButton}>
+        <DivTotal>
           <TitleTotal>Valor Total</TitleTotal>
           <ValueTotal>
             {Intl.NumberFormat('pt-br', {
@@ -238,7 +239,9 @@ export default function TemporaryDrawer({
         </DivTotal>
         <DivTotal bgColorButton={bgColorButton}>
           <ButtonFinalizar bgColorButton={bgColorButton} onClick={openModal}>
-            Finalizar Compra
+            <TitleCart bgColorButton={'var(--primary)'}>
+              Finalizar Compra
+            </TitleCart>
           </ButtonFinalizar>
         </DivTotal>
       </DivTitleCartBottom>

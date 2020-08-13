@@ -4,18 +4,6 @@ export const Container = styled.div`
   @media (max-width: 1001px) {
     height: auto;
   }
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-  background: url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png');
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  /* Preserve aspet ratio */
-  min-width: 100%;
-  min-height: 100%;
 `;
 
 export const DivLogoHeader = styled.div`

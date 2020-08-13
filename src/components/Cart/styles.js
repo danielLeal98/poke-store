@@ -23,7 +23,7 @@ export const ButtonCart = styled.button`
   }
 `;
 export const TitleCart = styled.span`
-  color: black;
+  color: ${(props) => props.bgColorButton};
   font-size: 24px;
 `;
 export const DivTitleCartTop = styled.div`
