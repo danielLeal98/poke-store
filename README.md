@@ -74,7 +74,7 @@ Também foram utilizados o eslint e prettier para estilização e formatação d
 - <h4>Home</h4>
 <br>
 <p align=center> 
-  <img src="./src/assets/pageHome.png" width=900/>
+  <img src="./src/assets/pageHome2.png" width=900/>
 </p>
 
 
