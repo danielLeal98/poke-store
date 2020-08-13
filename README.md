@@ -90,14 +90,14 @@ git clone <url-repositório>
 2. Entre na pasta do projeto via terminal e digite:
 
 ```
-npm install  ou  yarn install
+npm install
 
 ```
 
 3. Por último, execute a linha abaixo no terminal: 
 
 ```
-yarn start 
+npm run start 
 ```
 
 
