@@ -3,7 +3,7 @@
 </p>
 
 <p align=center>   
-  <strong>Uma loja virtual de Pokémon de diversos tipos pokémon.</strong>    
+  <strong>Uma loja virtual Pokémon de diversos tipos de pokémon.</strong>    
 </p>
 <p align=center>   
     <strong>Você pode acessar a loja em produção clicando diretamento <a href="https://poke-store.vercel.app/"</a>aqui.</strong>
