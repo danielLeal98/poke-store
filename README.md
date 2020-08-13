@@ -82,7 +82,7 @@ Também foram utilizados o eslint e prettier para estilização e formatação d
 - O "ganhou de volta" foi feito baseado no <a href="https://www.amedigital.com/">Ame</a>, coloquei para gerar a porcentagem de cashBack aleatóriamente).
 <br>
 <p align=center>
-  <img src="./src/assets/pageModal.png" width=900/>
+  <img src="./src/assets/pageModal.png" width=500/>
 </p>
 
 ## Como utilizar
