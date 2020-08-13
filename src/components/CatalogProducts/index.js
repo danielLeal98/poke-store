@@ -5,6 +5,8 @@ import pokebola from '../../../src/assets/pokebola.png';
 import api from '../../repositories/api';
 import Spinner from '../../components/Spinner';
 import { CatalogContainer, ProductsContainerLi, ButtonGet } from './styles';
+import notImage from '../../assets/imageDefault.png';
+import { toast } from 'react-toastify';
 
 export default function CatalogProducts({
   setCatalogItens,
@@ -42,6 +44,7 @@ export default function CatalogProducts({
   };
 
   async function addProduct(obj) {
+    toast.success('Pokemon adicionado!');
     const duplicated = cartItens.findIndex(
       (element) => element.name === obj.name
     );
@@ -78,7 +81,13 @@ export default function CatalogProducts({
             >
               <figure>
                 <img
-                  src={pokemon.image}
+                  src={pokemon.image ? pokemon.image : notImage}
+                  onError={(e) => {
+                    if (e.target.src !== notImage) {
+                      e.target.onerror = null;
+                      e.target.src = notImage;
+                    }
+                  }}
                   className="imagePokemon"
                   alt={pokemon.name}
                 />

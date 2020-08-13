@@ -10,10 +10,12 @@ export const DivHeader = styled.nav`
   right: 0;
   background-color: ${(props) => props.bgColor};
   border-bottom: 2px solid var(--primary);
-  padding-left: 1.5%;
+  padding-left: 5%;
+  padding-right: 5%;
 `;
 export const ButtonSearch = styled.button`
-  padding: 10px;
+  width: 5%;
+  height: 50%;
   background-color: ${(props) => props.bgColor};
   color: white;
   border-left: 1px solid var(--grass);

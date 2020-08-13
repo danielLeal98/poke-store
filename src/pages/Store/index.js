@@ -3,6 +3,9 @@ import { useLocation } from 'react-router-dom';
 import DivHeader from '../../components/Header';
 import Footer from '../../components/Footer';
 import CatalogProducts from '../../components/CatalogProducts';
+import TemporaryDrawer from '../../components/Cart';
+import { ToastContainer } from 'react-toastify';
+import GlobalStyled from '../../GlobalStyled';
 
 function Store() {
   const [cartItens, setCartItens] = useState(
@@ -37,6 +40,11 @@ function Store() {
         pokemons={pokemons}
         setCatalogItens={setCatalogItens}
         typePokemon={urlTypePokemon}
+      ></DivHeader>
+      <TemporaryDrawer
+        bgColorButton={bgColorButton}
+        cartItens={cartItens}
+        setCartItens={setCartItens}
       />
       <CatalogProducts
         setCartItens={setCartItens}
@@ -47,6 +55,8 @@ function Store() {
         typePokemon={urlTypePokemon}
         bgColorButton={bgColorButton}
       />
+      <GlobalStyled />
+      <ToastContainer autoClose={1000} className="toast-container" />
       <Footer bgColor={bgColor} />
     </>
   );

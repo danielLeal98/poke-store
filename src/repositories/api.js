@@ -2,7 +2,6 @@ import api from '../config';
 import { toast } from 'react-toastify';
 
 const URL_API = `${api.URL_POKEMON}`;
-const ArrayPokemons = JSON.parse(localStorage.getItem('pokemons'));
 
 function getPokemons(typePokemon) {
   let idTypePokemon = 0;
@@ -78,5 +77,5 @@ function clearCache() {
 
 export default {
   getPokemons,
-  clearCache
+  clearCache,
 };

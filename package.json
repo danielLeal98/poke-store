@@ -3,30 +3,29 @@
   "version": "0.2.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
     "mdbreact": "^4.27.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
+    "react-icons": "^3.10.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-slick": "^0.27.1",
-    "react-bootstrap": "^1.0.1",
     "react-toastify": "^6.0.8",
     "styled-components": "^5.1.1",
-    "react-icons": "^3.10.0",
-    "axios": "^0.19.2",
     "sweetalert2": "^9.10.13"
   },
   "scripts": {
     "start": "react-scripts start",
-    "dev": "concurrently \"react-scripts start\" \"node ./server.js\"",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "server:static": "json-server --watch .db.json --port 3003",
-    "server": "node ./server.js"
+    "build": "react-scripts build",
+    "deploy": "serve -s build"
   },
   "browserslist": {
     "production": [

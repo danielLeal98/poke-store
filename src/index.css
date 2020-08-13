@@ -53,7 +53,17 @@ a {
 	display: flex;
 	flex-direction: column;
 }
-
+	button:focus{
+	outline: thin dotted;
+			outline: 0px auto -webkit-focus-ring-color;
+			outline-offset: 0px;
+	}
+	button:focus {
+	 outline: thin dotted;
+			outline: 0px auto -webkit-focus-ring-color;
+			outline-offset: 0px;
+	}
+	
 ::-webkit-scrollbar {
   width: 7px;
 }
