@@ -25,24 +25,16 @@
    <img src="./src/assets/Fighting.png" width=150 height=61/>
 </p>
 
-<p align="center">
-  <a href="#page_with_curl-Sobre">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#page_with_curl-Sobre">Base de Dados</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#wrench-Construido-com">Construído com</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#heart_eyes-Como-usar">Como usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#pencil-Autor">Autor</a>
-</p>
-
 ## :page_with_curl: Sobre
 
 A PokéStore é um projeto proposto para os candidatos no processo seletivo de uma empresa do ramo da tecnologia, com o objetivo de fazer a criação de uma loja virtual de Pokémon, tendo que escolher 2 tipos de Pokemons um para cada (água, fogo, grama, elétrico e etc) e para cada pokemon atribuir um valor.
 Já participei desse processo seletivo no ano passado e afim de melhorar algumas coisas do projeto inclui outras tecnologias no projeto, juntamente com outros tipos de pokémon.
 
-## Base de Dados
+## 💾 Base de Dados
 
 Os Pokémon devem ser buscados diretamente da api <a href="https://pokeapi.co/">Pokeapi</a>, nessa api eles nos permitem passar por parametro qual tipo de pokemon nos queremos trazer na busca. Como um fã de pokémon escolhi o tipo "Grama e Água", para quem assiste ou já assistiu todo mundo sabe que o Squirtle e o Bubassauro são os melhores pokémons né? haha brincadeiras a parte.
 
-## MVP da aplicação
+## 📝 MVP da aplicação
 
 - Catálogo de produtos.
 - Carrinho lateral.
@@ -69,7 +61,7 @@ Também foram utilizados o eslint e prettier para estilização e formatação d
 - [ESLint](https://github.com/eslint/eslint)
 - [Prettier](https://github.com/prettier/prettier)
 
-## Screens
+## 📷 Screens
 
 - <h4>Home</h4>
 <br>
@@ -78,14 +70,14 @@ Também foram utilizados o eslint e prettier para estilização e formatação d
 </p>
 
 
-## Modal ao finalizar a compra
+## ✔️ Modal ao finalizar a compra
 - O "ganhou de volta" foi feito baseado no <a href="https://www.amedigital.com/">Ame</a>, coloquei para gerar a porcentagem de cashBack aleatóriamente).
 <br>
 <p align=center>
   <img src="./src/assets/pageModal.png" width=500/>
 </p>
 
-## Como utilizar
+## ℹ️ Como utilizar
 
 - <h4><strong>Para executar o projeto:</strong></h4>
 
