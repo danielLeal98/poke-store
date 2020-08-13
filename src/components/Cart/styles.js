@@ -78,8 +78,7 @@ export const ButtonFinalizar = styled.button`
   outline-style: none;
 `;
 export const DivTitleCartBottom = styled.div`
-    width: inherit;
-    position: fixed;
-    bottom: 0;
-}
+  width: inherit;
+  position: fixed;
+  bottom: 0;
 `;
