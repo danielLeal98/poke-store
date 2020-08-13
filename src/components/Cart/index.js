@@ -29,17 +29,11 @@ import './cart.css';
 import notImage from '../../assets/imageDefault.png';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    maxWidth: 752,
-  },
-  demo: {
-    backgroundColor: theme.palette.background.paper,
-  },
   title: {
-    margin: theme.spacing(4, 0, 2),
+    margin: theme.spacing(3, 0, 2),
   },
   list: {
-    width: 300,
+    width: 370,
     paddingTop: 30,
     paddingBottom: 112,
   },
@@ -181,7 +175,7 @@ export default function TemporaryDrawer({
         ></List>
       ) : (
         cartItens.map((pokemon) => (
-          <List>
+          <List style={{ display: 'flex' }}>
             <ListItem
               button
               key={`${pokemon.name}-${pokemon.quantity}-${pokemon.price}`}
@@ -202,7 +196,9 @@ export default function TemporaryDrawer({
                 </figure>
               </ListItemIcon>
               <ListItemText
-                primary={pokemon.name.toUpperCase()}
+                primary={
+                  pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)
+                }
                 secondary={Intl.NumberFormat('pt-br', {
                   style: 'currency',
                   currency: 'BRL',

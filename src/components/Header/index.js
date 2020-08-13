@@ -42,9 +42,6 @@ function Header({ bgColor, typePokemon, pokemons, setCatalogItens }) {
           placeholder="Busque aqui seu produto"
           onChange={handleSearch}
         />
-        <ButtonSearch bgColor={bgColor} disabled>
-          <FiSearch size={25} />
-        </ButtonSearch>
       </div>
     </DivHeader>
   );

@@ -69,7 +69,7 @@ function Home() {
             <img src={rockImg} alt="Rock" />
           </TypeContainer>
         </Link>
-        <Link to="/fire">
+        <Link to="/ghost">
           <TypeContainer bgcolor="var(--ghost)" borderColor="var(--ghost)">
             <img src={pokeGhost} alt="logo" />
             <img src={ghostImg} alt="Ghost" />
