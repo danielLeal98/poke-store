@@ -157,7 +157,7 @@ export default function TemporaryDrawer({
       }).then((result) => {
         if (result.dismiss === Swal.DismissReason.close) {
           localStorage.clear();
-          window.location.href = 'http://localhost:3000/';
+          window.location.href = window.location.origin;
         }
       });
     }
