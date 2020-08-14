@@ -30,14 +30,14 @@ export const ButtonGet = styled.button`
 
 export const ProductsContainerLi = styled.div`
   display: inline-block;
-  border-radius: 8px;
-  margin: 20px;
+  border-radius: 12px;
+  margin: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   width: auto;
   background-color: #f2f2f2;
 
-  @media (max-width: 500px) {
-    margin: 10px;
+  @media (max-width: 400px) {
+    margin: 5px;
   }
 
   figure:hover img {
