@@ -13,5 +13,7 @@ export const FooterBase = styled.nav`
 
   img {
     margin: 10px;
+    max-height: 5.2em;
+    max-width: 5.2em;
   }
 `;

@@ -1,17 +1,15 @@
 import styled from 'styled-components';
 
 export const DivHeader = styled.nav`
-  width: 100%;
-  display: flex;
-  align-items: center;
+  background-color: ${(props) => props.bgColor};
+  padding: 15px 0;
+  text-align: center;
+  font-size: calc(var(--font-size) * 1.2);
+  border-bottom: 1px solid var(--main-font-color);
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
-  background-color: ${(props) => props.bgColor};
-  border-bottom: 2px solid var(--primary);
-  padding-left: 5%;
-  padding-right: 5%;
+  width: 100%;
+  z-index: 2;
 `;
 export const ButtonSearch = styled.button`
   width: 5%;

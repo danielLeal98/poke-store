@@ -3,12 +3,13 @@ import styled from 'styled-components';
 export const CatalogContainer = styled.div`
   color: var(--white);
   flex: 1;
-  padding-top: 5%;
+  padding-top: 100px;
   padding-bottom: 5%;
   text-align: center;
 
-  @media (max-width: 700px) {
-    padding-top: 20%;
+  @media (max-width: 1024px) {
+    padding-top: 150px;
+    padding-bottom: 15%;
   }
 `;
 
@@ -48,8 +49,8 @@ export const ProductsContainerLi = styled.div`
     height: 90px;
   }
   .pokebola {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
   }
 
   .products-container-ul {

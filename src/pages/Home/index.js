@@ -28,13 +28,15 @@ import flyingImg from '../../assets/Flying.png';
 import fightingImg from '../../assets/Fighting.png';
 import poisonImg from '../../assets/Poison.png';
 
+import './home.css';
+
 import { Container, TypeContainer, Cards, DivLogoHeader } from './styles';
 
 function Home() {
   return (
     <Container>
       <DivLogoHeader>
-        <img src={logoImg} alt="Logo PokeStore" />
+        <img src={logoImg} className="logoHome" alt="Logo PokeStore" />
       </DivLogoHeader>
       <Cards>
         <Link to="/grass">

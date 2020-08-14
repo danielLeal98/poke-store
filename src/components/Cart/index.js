@@ -10,9 +10,10 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import IconButton from '@material-ui/core/IconButton';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Swal from 'sweetalert2';
 import { toast } from 'react-toastify';
+import pokeball from '../../assets/pokeballCart.png';
+import '../../components/Header/Header.css';
 import {
   IconCart,
   ButtonCart,
@@ -47,7 +48,6 @@ export default function TemporaryDrawer({
   cartItens,
   setCartItens,
 }) {
-  const cor = bgColorButton;
   const classes = useStyles();
   const [state, setState] = React.useState({
     top: false,
@@ -80,7 +80,6 @@ export default function TemporaryDrawer({
   async function addProduct(obj) {
     //Pokemon já existe no carrinho - adiciona mais uma quantidade no pokemon
     const items = cartItens.map((pokemon) => {
-      toast.success('Pokémon adicionado!');
       if (obj.name === pokemon.name) {
         const updatePokemon = {
           name: pokemon.name,
@@ -92,6 +91,7 @@ export default function TemporaryDrawer({
       }
       return pokemon;
     });
+    toast.success('Pokémon adicionado!');
     setCartItens(items);
   }
 
@@ -252,16 +252,17 @@ export default function TemporaryDrawer({
             bgColorButton={bgColorButton}
             onClick={toggleDrawer(anchor, true)}
           >
-            <ShoppingCartIcon
-              style={{
-                color: 'black',
-                width: '35px',
-                height: '30px',
-                margin: 'auto',
-                outlineStyle: 'none',
-              }}
-              className="iconCart"
-            />
+            <div className="divPokebola">
+              <small data-stage="buy" className="qtdBall">
+                {totalItens ? totalItens : 0}
+              </small>
+              <img
+                className="Logo"
+                class="pokeballCart"
+                src={pokeball}
+                alt="Pokebola"
+              />
+            </div>
           </ButtonCart>
           <Drawer
             anchor={anchor}

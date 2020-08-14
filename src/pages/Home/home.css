@@ -1,0 +1,10 @@
+.logoHome{
+  width: auto;
+  height: auto;
+}
+@media(max-width: 800px) {
+  .logoHome{
+    width: 50%;
+    height: auto;
+  }
+}

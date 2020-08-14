@@ -1,44 +1,106 @@
-.Logo {
-  width: 110px;
-  height: 40px;
-  margin: 10px;  
+.imgType {
+	max-height: 2.2em;
 }
 
-.divSearch {
-  display: flex;
-  background-color: transparent;
-  width: 100%;
-  margin: 10px;  
+.imgLogo {
+	max-height: 2.2em;
 }
 
-@media (min-width: 800px) {
-  .divSearch {
-    padding-left: 10%; 
-    
-  }
+.subHeader {
+	list-style-type: none;
+	display: flex;
+	padding: 0;
+	align-items: center;
+	max-width: 70rem;
+	margin: 0 auto;
+	justify-content: space-between;
 }
-.inputSearch{
-  font-size: 15px;
-  width: 50%;
-  height: 50%;
+
+@media screen and (max-width: 1024px) {
+	.subHeader {
+		flex-wrap: wrap;
+	}
 }
-@media (max-width: 800px) {
-  .Logo {
-    width: 70px;
-  }
-  .inputSearch{
-    font-size: 20px;
-    width: 100%;    
-    @media (max-width: 700px) {
-      width: auto;
-      height: auto;
-    }
-  }
-  .divSearch {
-    display: flex;     
-  }
-  button{
-    width: 50px;
-    
-  }
+
+@media screen and (max-width: 768px) {
+	.subHeader {
+		font-size: calc(var(--font-size) * 2);
+	}
+}
+
+.divInput {
+	position: relative;
+}
+
+@media screen and (max-width: 1024px) {
+	.divInput {
+		padding: 0 10px;
+		margin-top: 1rem;
+		flex: 1 1 100%;
+		order: 2;
+	}
+}
+
+.inputSearch {
+	border-radius: 3px;
+	border: 1px solid var(--white);
+	width: 550px;
+	height: 35px;
+	font-size: calc(var(--font-size) * 1.1);
+	padding: .3rem .5rem;
+	outline: 0;
+}
+
+@media screen and (max-width: 1024px) {
+	.inputSearch {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.divType {
+		margin-left: 10px;
+	}
+}
+
+.divPokebola {
+	position: relative;
+}
+
+@media screen and (max-width: 1200px) {
+	.divPokebola {
+		margin-right: 10px;
+	}
+}
+
+.pokeballCart {
+	max-height: 3.2em;
+}
+
+.qtdBall {
+	color: #222;
+	background-color: yellow;
+	border: 1px solid #222;
+	position: absolute;
+	border-radius: 1000px;
+	height: 1.4rem;
+	width: 1.4rem;
+	font-size: calc(var(--font-size) * 1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 700;
+	letter-spacing: -1px;
+	margin: 0;
+	bottom: -5%;
+	right: 2%;
+	transition: background-color 300ms
+}
+
+@media screen and (max-width: 768px) {
+	.qtdBall {
+		font-size: calc(var(--font-size) * .7);
+		height: 1.2rem;
+		width: 1.2rem;
+	}
 }

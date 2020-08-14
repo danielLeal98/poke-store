@@ -3,7 +3,9 @@ import styled from 'styled-components';
 export const Container = styled.div`
   @media (max-width: 1001px) {
     height: auto;
+    width: auto;
   }
+  width: auto;
 `;
 
 export const DivLogoHeader = styled.div`

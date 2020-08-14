@@ -3,9 +3,9 @@ export const IconCart = styled.div`
   color: var(--white);
   flex: 1;
   position: fixed;
-  margin-top: 45vh;
+  top: 80vh;
   @media (max-width: 700px) {
-    margin-top: 45vh;
+    top: 80vh;
   }
 `;
 export const ButtonCart = styled.button`
@@ -13,11 +13,11 @@ export const ButtonCart = styled.button`
   background-color: transparent;
   border: none;
   position: fixed;
-  right: 5;
+  right: 0;
   background-color: ${(props) => props.bgColorButton};
-  width: 60px;
-  height: 60px;
-  text-align: center;
+  width: 70px;
+  height: 70px;
+  align-items: center;
   border-radius: 50%;
   @media (max-width: 700px) {
   }
