@@ -58,6 +58,7 @@ function getPokemons(typePokemon) {
             .toString()}.png`,
           quantity: 1,
           price: Math.floor(Math.random() * 100),
+          url: data.pokemon.url,
         }));
         localStorage.setItem('pokemons', JSON.stringify(pokemons));
         return result;
@@ -70,6 +71,16 @@ function getPokemons(typePokemon) {
       console.log(err.message);
     });
 }
+
+function getDetailsPokemon(id) {
+  return fetch(`${api.URL_SPECIFIC_POKEMON}${id}/`).then(async (response) => {
+    if (response.ok) {
+      const result = await response.json();
+      return result;
+    }
+  });
+}
+
 function clearCache() {
   document.getElementById('title').innerText = 'PokeStore';
   localStorage.clear();
@@ -77,5 +88,6 @@ function clearCache() {
 
 export default {
   getPokemons,
+  getDetailsPokemon,
   clearCache,
 };

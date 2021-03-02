@@ -86,6 +86,18 @@ export default function CatalogProducts({
 
   function showModalDetails(pokemon, bgColor) {
     setState({ ...state, right: false });
+    let height = '';
+    api
+      .getDetailsPokemon(pokemon.id)
+      .then((data) => {
+        height = data.height;
+        console.log(height);
+        console.log(data);
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
     switch (typePokemon) {
       case 'water':
         bgColor = '#4A90DA';
@@ -129,7 +141,7 @@ export default function CatalogProducts({
     }
     Swal.fire({
       title: formatName(pokemon.name),
-      text: 'Modal with a custom image.',
+      text: `Height: ${height} `,
       imageUrl: pokemon.image,
       imageWidth: 200,
       imageHeight: 200,
