@@ -15,18 +15,18 @@ import pokeFighting from '../../assets/pokeFighting.png';
 import pokePoison from '../../assets/pokePoison.png';
 
 import logoImg from '../../assets/logo.png';
-import grassImg from '../../assets/Grass.png';
-import psychicImg from '../../assets/Psychic.png';
-import waterImg from '../../assets/Water.png';
-import fireImg from '../../assets/Fire.png';
-import rockImg from '../../assets/Rock.png';
-import ghostImg from '../../assets/Ghost.png';
-import iceImg from '../../assets/Ice.png';
-import dragonImg from '../../assets/Dragon.png';
-import electricImg from '../../assets/Electric.png';
-import flyingImg from '../../assets/Flying.png';
-import fightingImg from '../../assets/Fighting.png';
-import poisonImg from '../../assets/Poison.png';
+import grassImg from '../../assets/grass.png';
+import psychicImg from '../../assets/psychic.png';
+import waterImg from '../../assets/water.png';
+import fireImg from '../../assets/fire.png';
+import rockImg from '../../assets/rock.png';
+import ghostImg from '../../assets/ghost.png';
+import iceImg from '../../assets/ice.png';
+import dragonImg from '../../assets/dragon.png';
+import electricImg from '../../assets/electric.png';
+import flyingImg from '../../assets/flying.png';
+import fightingImg from '../../assets/fighting.png';
+import poisonImg from '../../assets/poison.png';
 
 import './home.css';
 

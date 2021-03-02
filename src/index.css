@@ -1,9 +1,10 @@
 * {
 	box-sizing: border-box;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Fira Code', monospace;
 }
 
 :root {
+	--ligth-green:  #80b571;
 	--primary: #F5F5F5;
 	--grass: #8BBE8A;
 	--psychic: #FF6568;
@@ -41,7 +42,6 @@ body {
   min-height: 100%;
 	margin: 0;
 	padding: 0;
-	
 }
 
 a {
@@ -82,4 +82,7 @@ a {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: grey;
+}
+.fundoModal{
+	background-image: url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png');
 }

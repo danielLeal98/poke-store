@@ -29,7 +29,7 @@ function Header({ bgColor, typePokemon, pokemons, setCatalogItens }) {
         <div className="divType">
           <img
             className="imgType"
-            src={require(`../../assets/` + typePokemon + `.png`)}
+            src={require(`../../assets/` + typePokemon.toLowerCase() + `.png`)}
             alt={typePokemon}
           />
         </div>

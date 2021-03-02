@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState } from 'react';
+import React, { useState, setState } from 'react';
 import { FiShoppingCart } from 'react-icons/fi';
 import pokebola from '../../../src/assets/pokebola.png';
 import api from '../../repositories/api';
@@ -7,6 +7,7 @@ import Spinner from '../../components/Spinner';
 import { CatalogContainer, ProductsContainerLi, ButtonGet } from './styles';
 import notImage from '../../assets/imageDefault.png';
 import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 export default function CatalogProducts({
   setCatalogItens,
@@ -16,10 +17,17 @@ export default function CatalogProducts({
   typePokemon,
   bgColorButton,
   catalogItens,
+  urlTypePokemon,
 }) {
   const [shoppingCart, setShoppingCart] = useState([]);
   const [isLoading, setLoading] = useState(true);
   const ArrayPokemons = JSON.parse(localStorage.getItem('pokemons'));
+  const [state, setState] = React.useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
 
   React.useEffect(() => {
     getPoke();
@@ -31,7 +39,7 @@ export default function CatalogProducts({
     if (!ArrayPokemons) {
       setLoading(true);
       api
-        .getPokemons(typePokemon)
+        .getPokemons(urlTypePokemon)
         .then((pokemon) => {
           window.location.reload();
         })
@@ -69,6 +77,72 @@ export default function CatalogProducts({
       setCartItens(items);
     }
   }
+
+  const formatName = (str) => {
+    return str
+      .toLowerCase()
+      .replace(/(?:^|\s)(?!da|de|do)\S/g, (l) => l.toUpperCase());
+  };
+
+  function showModalDetails(pokemon, bgColor) {
+    setState({ ...state, right: false });
+    switch (typePokemon) {
+      case 'water':
+        bgColor = '#4A90DA';
+        break;
+      case 'grass':
+        bgColor = '#62B957';
+        break;
+      case 'fire':
+        bgColor = '#FD7D24';
+        break;
+      case 'fighting':
+        bgColor = '#D04164';
+        break;
+      case 'dragon':
+        bgColor = '#0F6AC0';
+        break;
+      case 'psychic':
+        bgColor = '#EA5D60';
+        break;
+      case 'flying':
+        bgColor = '#748FC9';
+        break;
+      case 'ice':
+        bgColor = '#61CEC0';
+        break;
+      case 'ghost':
+        bgColor = '#8571BE';
+        break;
+      case 'rock':
+        bgColor = '#BAAB82';
+        break;
+      case 'poison':
+        bgColor = '#A552CC';
+        break;
+      case 'electric':
+        bgColor = '#F2CB55';
+        break;
+      default:
+        bgColor = '#FFFF';
+      // code block
+    }
+    Swal.fire({
+      title: formatName(pokemon.name),
+      text: 'Modal with a custom image.',
+      imageUrl: pokemon.image,
+      imageWidth: 200,
+      imageHeight: 200,
+      imageAlt: pokemon.name,
+      background: `linear-gradient(${bgColor}, #FFFF)`,
+      animation: true,
+      showCloseButton: true,
+      showConfirmButton: false,
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+    });
+  }
+
   return (
     <CatalogContainer>
       <div className="catalog">
@@ -81,6 +155,7 @@ export default function CatalogProducts({
             >
               <figure>
                 <img
+                  onClick={() => showModalDetails(pokemon, bgColorButton)}
                   src={pokemon.image ? pokemon.image : notImage}
                   onError={(e) => {
                     if (e.target.src !== notImage) {

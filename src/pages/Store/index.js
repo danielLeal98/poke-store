@@ -52,8 +52,9 @@ function Store() {
         setCatalogItens={setCatalogItens}
         catalogItens={catalogItens}
         setPokemons={setPokemons}
-        typePokemon={urlTypePokemon}
+        urlTypePokemon={urlTypePokemon}
         bgColorButton={bgColorButton}
+        typePokemon={typePokemon}
       />
       <GlobalStyled />
       <ToastContainer autoClose={1000} className="toast-container" />

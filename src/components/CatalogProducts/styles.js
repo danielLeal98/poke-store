@@ -35,7 +35,6 @@ export const ProductsContainerLi = styled.div`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   width: auto;
   background-color: #f2f2f2;
-
   @media (max-width: 400px) {
     margin: 5px;
   }
@@ -45,9 +44,11 @@ export const ProductsContainerLi = styled.div`
   }
 
   .imagePokemon {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
   }
+
   .pokebola {
     width: 25px;
     height: 25px;

@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  @media (max-width: 1001px) {
-    height: auto;
-    width: auto;
-  }
-  width: auto;
+  background: url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png');
+  background-repeat: repeat-x;
+  top: 0;
+  left: 0;  
+  min-width: 100%;
+  min-height: 100%;
+	margin: 0;
+	padding: 0;
 `;
 
 export const DivLogoHeader = styled.div`
