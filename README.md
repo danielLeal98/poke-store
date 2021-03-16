@@ -6,7 +6,7 @@
   <strong>Uma loja virtual Pokémon de diversos tipos de pokémon.</strong>    
 </p>
 <p align=center>   
-    <strong>Você pode acessar a loja em produção clicando diretamento <a href="https://poke-store.vercel.app/"</a>aqui.</strong>
+    <strong>Você pode acessar a loja em produção clicando diretamento <a href="https://poke-store.vercel.app/" target="_blank"</a>aqui.</strong>
 </p>
 <br>
 
@@ -32,7 +32,7 @@ Já participei desse processo seletivo no ano passado e afim de melhorar algumas
 
 ## 💾 Base de Dados
 
-Os Pokémon devem ser buscados diretamente da api <a href="https://pokeapi.co/">Pokeapi</a>, nessa api eles nos permitem passar por parametro qual tipo de pokemon nos queremos trazer na busca. Como um fã de pokémon escolhi o tipo "Grama e Água", para quem assiste ou já assistiu todo mundo sabe que o Squirtle e o Bubassauro são os melhores pokémons né? haha brincadeiras a parte.
+Os Pokémon devem ser buscados diretamente da api <a href="https://pokeapi.co/" target="_blank">Pokeapi</a>, nessa api eles nos permitem passar por parametro qual tipo de pokemon nos queremos trazer na busca. Como um fã de pokémon escolhi o tipo "Grama e Água", para quem assiste ou já assistiu todo mundo sabe que o Squirtle e o Bubassauro são os melhores pokémons né? haha brincadeiras a parte.
 
 ## 📝 MVP da aplicação
 
