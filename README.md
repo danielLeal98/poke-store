@@ -11,18 +11,18 @@
 <br>
 
 <p align=center>
-    <img src="./src/assets/Grass.png"width=150 height=61/>
-   <img src="./src/assets/Water.png" width=150 height=61/>
-   <img src="./src/assets/Fire.png" width=150 height=61/>
-   <img src="./src/assets/Electric.png" width=150 height=61/>
-   <img src="./src/assets/Ghost.png" width=150 height=61/>
-   <img src="./src/assets/Psychic.png" width=150 height=61/>
-   <img src="./src/assets/Rock.png" width=150 height=61/>
-   <img src="./src/assets/Dragon.png" width=150 height=61/>
-   <img src="./src/assets/Ice.png" width=150 height=61/>
-   <img src="./src/assets/Flying.png" width=150 height=61/>
-   <img src="./src/assets/Poison.png" width=150 height=61/>
-   <img src="./src/assets/Fighting.png" width=150 height=61/>
+    <img src="./src/assets/grass.png"width=150 height=61/>
+   <img src="./src/assets/water.png" width=150 height=61/>
+   <img src="./src/assets/fire.png" width=150 height=61/>
+   <img src="./src/assets/electric.png" width=150 height=61/>
+   <img src="./src/assets/ghost.png" width=150 height=61/>
+   <img src="./src/assets/psychic.png" width=150 height=61/>
+   <img src="./src/assets/rock.png" width=150 height=61/>
+   <img src="./src/assets/dragon.png" width=150 height=61/>
+   <img src="./src/assets/ice.png" width=150 height=61/>
+   <img src="./src/assets/flying.png" width=150 height=61/>
+   <img src="./src/assets/poison.png" width=150 height=61/>
+   <img src="./src/assets/fighting.png" width=150 height=61/>
 </p>
 
 ## :page_with_curl: Sobre
