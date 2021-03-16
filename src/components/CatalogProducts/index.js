@@ -146,7 +146,7 @@ export default function CatalogProducts({
       imageWidth: 200,
       imageHeight: 200,
       imageAlt: pokemon.name,
-      background: `linear-gradient(${bgColor}, #FFFF)`,
+      background: `linear-gradient(to bottom right,${bgColor}, #FFFF)`,
       animation: true,
       showCloseButton: true,
       showConfirmButton: false,
