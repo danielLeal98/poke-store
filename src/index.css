@@ -1,88 +1,89 @@
 * {
-	box-sizing: border-box;
-	font-family: 'Fira Code', monospace;
+  box-sizing: border-box;
+  font-family: 'Fira Code', monospace;
 }
 
 :root {
-	--ligth-green:  #80b571;
-	--primary: #F5F5F5;
-	--grass: #8BBE8A;
-	--psychic: #FF6568;
-	--water: #4A90DA;
-	--fire: #FD7D24;
-	--fighting: #D04164;
-	--flying: #748FC9;
-	--poison: #A552CC;
-	--rock: #BAAB82;
-	--ghost: #8571BE;
-	--ice: #61CEC0;
-	--dragon: #0F6AC0;
-	--electric: #F2CB55;
-	
-	--buttonGrass:#62B957;	
-	--buttonPsychic: #EA5D60;
-	--buttonWater: #4A90DA;
-	--buttonFire: #FD7D24;
-	--buttonFighting: #D04164;
-	--buttonFlying: #748FC9;
-	--buttonPoison: #A552CC;
-	--buttonRock: #BAAB82;
-	--buttonGhost: #8571BE;
-	--buttonIce: #61CEC0;
-	--buttonDragon: #0F6AC0;
-	--buttonElectric: #F2CB55;	
+  --grey: #b6c8da;
+  --grey-light: #dcdcdc;
+  --ligth-green: #80b571;
+  --primary: #f5f5f5;
+  --grass: #8bbe8a;
+  --psychic: #ff6568;
+  --water: #4a90da;
+  --fire: #fd7d24;
+  --fighting: #d04164;
+  --flying: #748fc9;
+  --poison: #a552cc;
+  --rock: #baab82;
+  --ghost: #8571be;
+  --ice: #61cec0;
+  --dragon: #0f6ac0;
+  --electric: #f2cb55;
+
+  --buttonGrass: #62b957;
+  --buttonPsychic: #ea5d60;
+  --buttonWater: #4a90da;
+  --buttonFire: #fd7d24;
+  --buttonFighting: #d04164;
+  --buttonFlying: #748fc9;
+  --buttonPoison: #a552cc;
+  --buttonRock: #baab82;
+  --buttonGhost: #8571be;
+  --buttonIce: #61cec0;
+  --buttonDragon: #0f6ac0;
+  --buttonElectric: #f2cb55;
 }
 
 html,
 body {
-	background: url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png');
+  background: url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png');
   top: 0;
-  left: 0;  
+  left: 0;
   min-width: 100%;
   min-height: 100%;
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 a {
-	color: inherit;
+  color: inherit;
 }
 
 #root {
-	min-height: calc(100vh - var(--bodyPaddingTop));
-	display: flex;
-	flex-direction: column;
+  min-height: calc(100vh - var(--bodyPaddingTop));
+  display: flex;
+  flex-direction: column;
 }
-	button:focus{
-	outline: thin dotted;
-			outline: 0px auto -webkit-focus-ring-color;
-			outline-offset: 0px;
-	}
-	button:focus {
-	 outline: thin dotted;
-			outline: 0px auto -webkit-focus-ring-color;
-			outline-offset: 0px;
-	}
-	
+button:focus {
+  outline: thin dotted;
+  outline: 0px auto -webkit-focus-ring-color;
+  outline-offset: 0px;
+}
+button:focus {
+  outline: thin dotted;
+  outline: 0px auto -webkit-focus-ring-color;
+  outline-offset: 0px;
+}
+
 ::-webkit-scrollbar {
   width: 7px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-	
-	background: var(--primary); 
+  background: var(--primary);
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: grey; 
+  background: grey;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: grey;
 }
-.fundoModal{
-	background-image: url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png');
+.fundoModal {
+  background-image: url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png');
 }

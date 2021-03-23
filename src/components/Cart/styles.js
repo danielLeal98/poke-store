@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 export const IconCart = styled.div`
   color: var(--white);
   flex: 1;
@@ -19,8 +20,6 @@ export const ButtonCart = styled.button`
   height: 70px;
   align-items: center;
   border-radius: 50%;
-  @media (max-width: 700px) {
-  }
 `;
 export const TitleCart = styled.h2`
   color: ${(props) => props.bgColorButton};
@@ -88,5 +87,5 @@ export const DivTitleCartBottom = styled.div`
   width: inherit;
   position: fixed;
   bottom: 0;
-  background-color: grey;
+  background-color: var(--grey-light);
 `;

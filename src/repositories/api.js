@@ -2,8 +2,9 @@ import api from '../config';
 import { toast } from 'react-toastify';
 
 const URL_API = `${api.URL_POKEMON}`;
+const URL_TEXT_POKEMON = `${api.URL_TEXT_POKEMON}`;
 
-function getPokemons(typePokemon) {
+async function getPokemons(typePokemon) {
   let idTypePokemon = 0;
   switch (typePokemon) {
     case 'Fighting':
@@ -52,12 +53,12 @@ function getPokemons(typePokemon) {
         const pokemons = result.pokemon.map((data, index) => ({
           name: data.pokemon.name,
           id: data.pokemon.url.split('/', 7).slice(-1).toString(),
-          image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.pokemon.url
+          image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.pokemon.url
             .split('/', 7)
             .slice(-1)
             .toString()}.png`,
           quantity: 1,
-          price: Math.floor(Math.random() * 100),
+          price: Math.floor(Math.random() * 200),
           url: data.pokemon.url,
         }));
         localStorage.setItem('pokemons', JSON.stringify(pokemons));
@@ -72,11 +73,29 @@ function getPokemons(typePokemon) {
     });
 }
 
-function getDetailsPokemon(id) {
+async function getDetailsPokemon(id) {
   return fetch(`${api.URL_SPECIFIC_POKEMON}${id}/`).then(async (response) => {
     if (response.ok) {
       const result = await response.json();
+      getDescriptionPokemon(id);
       return result;
+    }
+  });
+}
+
+async function getDescriptionPokemon(idPokemon) {
+  return fetch(`${URL_TEXT_POKEMON}${idPokemon}/`).then(async (response) => {
+    if (response.ok) {
+      const result = await response.json();
+      let texts = [];
+      texts = result.flavor_text_entries;
+      const textsFilters = texts.filter((text) => {
+        return text.language.name === 'en' && text.version.name === 'emerald';
+      });
+
+      return textsFilters[0]?.flavor_text
+        ? textsFilters[0]?.flavor_text
+        : '...';
     }
   });
 }
@@ -90,4 +109,5 @@ export default {
   getPokemons,
   getDetailsPokemon,
   clearCache,
+  getDescriptionPokemon,
 };

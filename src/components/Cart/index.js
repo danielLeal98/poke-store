@@ -175,7 +175,7 @@ export default function TemporaryDrawer({
         ></List>
       ) : (
         cartItens.map((pokemon) => (
-          <List style={{ display: 'flex' }}>
+          <List style={{ display: 'flex', marginTop: '10px' }}>
             <ListItem
               button
               key={`${pokemon.name}-${pokemon.quantity}-${pokemon.price}`}
@@ -217,7 +217,7 @@ export default function TemporaryDrawer({
         ))
       )}
 
-      <DivTitleCartBottom>
+      <DivTitleCartBottom bgColorButton={bgColorButton}>
         <DivTitleCartTop bgColorButton={bgColorButton}>
           <TitleCart bgColorButton={'var(--primary)'}>
             Resumo do Carrinho: {totalItens ? totalItens : 0}

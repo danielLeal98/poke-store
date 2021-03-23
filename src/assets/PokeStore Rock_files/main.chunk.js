@@ -3245,7 +3245,8 @@ function getPokemons(typePokemon) {
         id: data.pokemon.url.split('/', 7).slice(-1).toString(),
         image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.pokemon.url.split('/', 7).slice(-1).toString()}.png`,
         quantity: 1,
-        price: Math.floor(Math.random() * 100)
+        price: Math.floor(Math.random() * 100),
+       
       }));
       localStorage.setItem('pokemons', JSON.stringify(pokemons));
       return result;

@@ -64,8 +64,12 @@ export const ProductsContainerLi = styled.div`
     text-align: center;
     justify-content: center;
     color: black;
-    margin-bottom: 10px;
+    margin: 10px;
     font-size: 16px;
+  }
+
+  .products-container-ul-li-p {
+    margin: 0px 10px 0px 10px;
   }
 
   .products-container-ul-li-p:first-letter {
@@ -78,6 +82,6 @@ export const ProductsContainerLi = styled.div`
     justify-content: center;
     color: white;
     font-size: 15px;
-    font-weight: bold;
+    font-weight: 400;
   }
 `;

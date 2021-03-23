@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, setState } from 'react';
+import React, { useState } from 'react';
 import { FiShoppingCart } from 'react-icons/fi';
 import pokebola from '../../../src/assets/pokebola.png';
 import api from '../../repositories/api';
@@ -8,6 +8,7 @@ import { CatalogContainer, ProductsContainerLi, ButtonGet } from './styles';
 import notImage from '../../assets/imageDefault.png';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
+import hookPokemon from '../../hooks/hookPokemon.js';
 
 export default function CatalogProducts({
   setCatalogItens,
@@ -21,22 +22,26 @@ export default function CatalogProducts({
 }) {
   const [shoppingCart, setShoppingCart] = useState([]);
   const [isLoading, setLoading] = useState(true);
-  const ArrayPokemons = JSON.parse(localStorage.getItem('pokemons'));
+  const [infoPokemon, setInfoPokemon] = useState(null);
+  const [descriptionPokemon, setDescriptionPokemon] = useState(null);
   const [state, setState] = React.useState({
     top: false,
     left: false,
     bottom: false,
     right: false,
   });
-
+  const arrayPokemons = JSON.parse(localStorage.getItem('pokemons'));
+  const imageFallBackPokemon =
+    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
+  console.log(descriptionPokemon);
   React.useEffect(() => {
     getPoke();
   }, [shoppingCart]);
 
   const getPoke = async () => {
-    setCatalogItens(ArrayPokemons);
-    setPokemons(ArrayPokemons);
-    if (!ArrayPokemons) {
+    setCatalogItens(arrayPokemons);
+    setPokemons(arrayPokemons);
+    if (!arrayPokemons) {
       setLoading(true);
       api
         .getPokemons(urlTypePokemon)
@@ -78,26 +83,26 @@ export default function CatalogProducts({
     }
   }
 
-  const formatName = (str) => {
-    return str
-      .toLowerCase()
-      .replace(/(?:^|\s)(?!da|de|do)\S/g, (l) => l.toUpperCase());
-  };
-
   function showModalDetails(pokemon, bgColor) {
     setState({ ...state, right: false });
-    let height = '';
     api
       .getDetailsPokemon(pokemon.id)
       .then((data) => {
-        height = data.height;
-        console.log(height);
-        console.log(data);
-        console.log(data);
+        setInfoPokemon(data);
       })
       .catch((err) => {
         console.log(err.message);
       });
+
+    api
+      .getDescriptionPokemon(pokemon.id)
+      .then((data) => {
+        setDescriptionPokemon(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+
     switch (typePokemon) {
       case 'water':
         bgColor = '#4A90DA';
@@ -137,22 +142,40 @@ export default function CatalogProducts({
         break;
       default:
         bgColor = '#FFFF';
-      // code block
     }
-    Swal.fire({
-      title: formatName(pokemon.name),
-      text: `Height: ${height} `,
-      imageUrl: pokemon.image,
-      imageWidth: 200,
-      imageHeight: 200,
-      imageAlt: pokemon.name,
-      background: `linear-gradient(to bottom right,${bgColor}, #FFFF)`,
-      animation: true,
-      showCloseButton: true,
-      showConfirmButton: false,
-      allowOutsideClick: false,
-      allowEscapeKey: false,
-    });
+
+    const backgroundColor =
+      'linear-gradient(' + bgColor + ', var(--grey-light)';
+    console.log(infoPokemon);
+    if (infoPokemon != null) {
+      const TextInfo = `<span>${
+        descriptionPokemon !== undefined ? descriptionPokemon : '...'
+      }</span><br><br><i>Altura: ${
+        infoPokemon?.height !== undefined
+          ? hookPokemon.formatHeight(infoPokemon?.height)
+          : hookPokemon.formatHeight(Math.floor(Math.random() * 100))
+      }</i><br><i>Peso: ${
+        infoPokemon?.weight !== undefined
+          ? hookPokemon.formatWeight(infoPokemon?.weight)
+          : hookPokemon.formatWeight(Math.floor(Math.random() * 200))
+      } Kg</i><br>`;
+
+      Swal.fire({
+        timer: 5000,
+        title: hookPokemon.formatName(pokemon.name),
+        html: infoPokemon ? TextInfo : hookPokemon.formatName(pokemon.name),
+        imageUrl: `${imageFallBackPokemon}${pokemon.id}.png`,
+        imageWidth: 250,
+        imageHeight: 250,
+        imageAlt: pokemon.name,
+        background: backgroundColor,
+        animation: true,
+        showCloseButton: true,
+        showConfirmButton: false,
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+      });
+    }
   }
 
   return (
@@ -164,15 +187,19 @@ export default function CatalogProducts({
           catalogItens.map((pokemon) => (
             <ProductsContainerLi
               key={`${pokemon.name}-${pokemon.quantity}-${pokemon.price}`}
+              onClick={(e) => showModalDetails(pokemon, bgColorButton)}
             >
               <figure>
                 <img
-                  onClick={() => showModalDetails(pokemon, bgColorButton)}
-                  src={pokemon.image ? pokemon.image : notImage}
+                  src={
+                    pokemon.image
+                      ? pokemon.image
+                      : `${imageFallBackPokemon}${pokemon.id}.png`
+                  }
                   onError={(e) => {
                     if (e.target.src !== notImage) {
                       e.target.onerror = null;
-                      e.target.src = notImage;
+                      e.target.src = `${imageFallBackPokemon}${pokemon.id}.png`;
                     }
                   }}
                   className="imagePokemon"
